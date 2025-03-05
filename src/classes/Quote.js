@@ -5,6 +5,14 @@ class Quote {
     this.author = author;
     this.isFavorite = false;
   }
+
+  formatText() {
+    return `"${this.text}"`;
+  }
+
+  formatAuthor() {
+    return `${this.author}`;
+  }
 }
 
 export default Quote;
