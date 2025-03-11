@@ -29,13 +29,13 @@ body {
 }
 
 .btn-secondary {
-  background-color: #6c757d;
+  background-color: #1d9226;
   color: white;
   border: 1px solid #6c757d;
 }
 
 .btn-secondary:hover {
-  background-color: #5a6268;
+  background-color: #146922;
   border-color: #545b62;
 }
 

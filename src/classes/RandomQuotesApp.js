@@ -26,20 +26,20 @@ class RandomQuotesApp {
     }
   }
 
-  getRandomQuote() {
+  randomQuoteHandler() {
     this.changeCurrentQuote(RandomQuote.getRandomQuote());
   }
 
-  async getRandomQuoteApi() {
+  async randomQuoteViaApiHandler() {
     this.changeCurrentQuote(await RandomQuote.apiGetRandomQuote());
   }
 
   init() {
     this.choseRandomQuoteBtn.addEventListener('click', () =>
-      this.getRandomQuote()
+      this.randomQuoteHandler()
     );
     this.apiRandomQuiteBtn.addEventListener('click', () =>
-      this.getRandomQuoteApi()
+      this.randomQuoteViaApiHandler()
     );
   }
 }
