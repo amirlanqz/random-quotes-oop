@@ -9,14 +9,17 @@ class RandomQuote {
     return new Quote(id, text, author);
   }
 
-  static apiGetRandomQuote() {
-    return fetch('https://quoteslate.vercel.app/api/quotes/random')
-      .then((response) => response.json())
-      .then((data) => {
-        const { id, quote, author } = data;
-        return new Quote(id, quote, author);
-      })
-      .catch((error) => console.log(error));
+  static async apiGetRandomQuote() {
+    try {
+      const res = await fetch(
+        'https://quoteslate.vercel.app/api/quotes/random'
+      );
+      const data = await res.json();
+      const { id, quote, author } = data;
+      return new Quote(id, quote, author);
+    } catch (error) {
+      console.log(error);
+    }
   }
 }
 
