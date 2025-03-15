@@ -15,8 +15,10 @@ class RandomQuote {
         'https://quoteslate.vercel.app/api/quotes/random'
       );
       const data = await res.json();
-      const { id, quote, author } = data;
-      return new Quote(id, quote, author);
+      if (typeof data === 'object') {
+        const { id, quote, author } = data;
+        return new Quote(id, quote, author);
+      }
     } catch (error) {
       console.log(error);
     }
