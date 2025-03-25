@@ -5,7 +5,7 @@ body {
 }
 
 .container {
-  max-width: 600px;
+  max-width: 700px;
   margin: 50px auto;
   text-align: center;
 }
@@ -17,11 +17,16 @@ body {
   border: none;
   cursor: pointer;
   border-radius: 10px;
-  margin: 0 10px;
+  margin: 10px 10px;
 }
 
 .btn-primary {
   background-color: #007bff;
+}
+
+.btn-ternary {
+  background-color: #ffc107;
+  color: black;
 }
 
 .btn-primary:hover {

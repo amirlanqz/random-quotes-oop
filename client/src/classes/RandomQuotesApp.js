@@ -6,7 +6,12 @@ class RandomQuotesApp {
     this.choseRandomQuoteBtn = document.getElementById(
       'chose-random-quote-btn'
     );
-    this.apiRandomQuiteBtn = document.getElementById('api-random-quote-btn');
+    this.apiRandomQuitePublicBtn = document.getElementById(
+      'api-random-quote-public-btn'
+    );
+    this.apiRandomQuiteOwnBtn = document.getElementById(
+      'api-random-quote-own-btn'
+    );
     this.quoteTextElement = document.getElementById('quote-text');
     this.quoteAuthorElement = document.getElementById('quote-author');
     this.currentQuote = null;
@@ -30,16 +35,23 @@ class RandomQuotesApp {
     this.changeCurrentQuote(RandomQuote.getRandomQuote());
   }
 
-  async randomQuoteViaApiHandler() {
-    this.changeCurrentQuote(await RandomQuote.apiGetRandomQuote());
+  async randomQuoteViaApiPublicHandler() {
+    this.changeCurrentQuote(await RandomQuote.apiGetRandomPublicQuote());
+  }
+
+  async randomQuoteViaApiOwnHandler() {
+    this.changeCurrentQuote(await RandomQuote.apiGetRandomOwnQuote());
   }
 
   init() {
     this.choseRandomQuoteBtn.addEventListener('click', () =>
       this.randomQuoteHandler()
     );
-    this.apiRandomQuiteBtn.addEventListener('click', () =>
-      this.randomQuoteViaApiHandler()
+    this.apiRandomQuitePublicBtn.addEventListener('click', () =>
+      this.randomQuoteViaApiPublicHandler()
+    );
+    this.apiRandomQuiteOwnBtn.addEventListener('click', () =>
+      this.randomQuoteViaApiOwnHandler()
     );
   }
 }
